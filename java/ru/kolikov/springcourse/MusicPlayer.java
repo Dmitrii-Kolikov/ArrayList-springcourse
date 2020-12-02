@@ -4,34 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<>();
-    private String name;
-    private int volume;
+    private List<Music> musicList;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-
-    public MusicPlayer(List<Music> musicList) {   //конструктор
+    public MusicPlayer(List<Music> musicList) {
        this.musicList=musicList;
     }
-    public MusicPlayer() {  }   //дефолтный конструктор
-    public void setMusicList(List<Music> musicList) { this.musicList = musicList; } //при создании сетера, если у нас имеется,
-    public void playMusicList() {                                                   //конструктор, нужно создать дефолтный конструктор
-        for(Music music:musicList) {
-        System.out.println("Playing " + music.getSong()); }
+    public MusicPlayer() {   //при создании Setter в Bean, если у нас имеется конструктор, то мы должны создать дефолтный конструктор(по-умолчанию).
+    }
+    public void setMusicList(List<Music> musicList) {  //Чтобы наш Bean мог распознать Setter, от нашего конструктора.
+        this.musicList=musicList;
+    }
+
+    public void playMusicList() {
+        for(Music musicList: musicList)
+
+        System.out.println("Playing " + musicList.getSong());
     }
 }
