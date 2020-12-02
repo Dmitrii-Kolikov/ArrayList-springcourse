@@ -6,32 +6,33 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+   
+        
     <bean id="musicBean1"
-          class="ru.kolikov.springcourse.ClassicalMusic">
+          class="ru.kolikov.springcourse.ClassicalMusic" >
+
     </bean>
 
     <bean id="musicBean2"
-          class="ru.kolikov.springcourse.RockMusic">
+          class="ru.kolikov.springcourse.RockMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy" >
     </bean>
 
     <bean id="musicBean3"
-          class="ru.kolikov.springcourse.RapMusic">
+          class="ru.kolikov.springcourse.RapMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy" >
     </bean>
 
     <bean id="musicPlayer"
           class="ru.kolikov.springcourse.MusicPlayer">
         <property name="musicList">
             <list>
-                <ref bean="musicBean1"/>
-                <ref bean="musicBean2"/>
-                <ref bean="musicBean3"/>
+            <ref bean="musicBean1" />
+            <ref bean="musicBean2" />
+            <ref bean="musicBean3" />
             </list>
         </property>
-
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
-
 </beans>
