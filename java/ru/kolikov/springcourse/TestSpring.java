@@ -7,11 +7,14 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicattionContext.xml"
         );
-        
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusicList();
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+        MusicPlayer musicPlayer1 = context.getBean("musicPlayer", MusicPlayer.class);
+        musicPlayer1.playMusicList();  // проверям наши init-method and destroy-method.
+        MusicPlayer musicPlayer2 = context.getBean("musicPlayer", MusicPlayer.class);
+        musicPlayer2.playMusicList();  // проверям наши init-method and destroy-method.
+        //смотрим как происходит срабатывание метода init и destroy и выводим весь наш список на экран.
+
+
+        context.close();  
 
     }
 }
