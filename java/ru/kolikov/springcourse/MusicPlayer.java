@@ -4,16 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicPlayer {
-    Music music1 = new RapMusic();
     private List<Music> musicList = new ArrayList<>();
-   // public List<Music> musicList() {
-   //     musicList.add(new RepMusic());
-  //      musicList.add(new RockMusic());
-  //      musicList.add(new ClassicalMusic());
-  //      return  musicList;
-  //  }
-
-   // private Music music;
     private String name;
     private int volume;
 
@@ -33,13 +24,13 @@ public class MusicPlayer {
         return volume;
     }
 
-    //IOC
-    public MusicPlayer(List<Music> musicList) {
+
+    public MusicPlayer(List<Music> musicList) {   //конструктор
        this.musicList=musicList;
     }
-    public MusicPlayer() {  }
-    public void setMusicList(List<Music> musicList) { this.musicList = musicList; }
-    public void playMusicList() {
+    public MusicPlayer() {  }   //дефолтный конструктор
+    public void setMusicList(List<Music> musicList) { this.musicList = musicList; } //при создании сетера, если у нас имеется,
+    public void playMusicList() {                                                   //конструктор, нужно создать дефолтный конструктор
         for(Music music:musicList) {
         System.out.println("Playing " + music.getSong()); }
     }
