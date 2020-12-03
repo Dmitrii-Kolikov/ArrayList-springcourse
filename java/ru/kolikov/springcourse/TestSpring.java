@@ -10,9 +10,9 @@ public class TestSpring {
         MusicPlayer musicPlayer1 = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer1.playMusicList();  // проверям наши init-method and destroy-method.
         MusicPlayer musicPlayer2 = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer2.playMusicList();  // проверям наши init-method and destroy-method при  созданни одинаковых бинов.
+        musicPlayer2.playMusicList();  // проверям наши init-method and destroy-method при  созданни несколько бинов Singleton с одинаковым объектом.
         //смотрим как происходит срабатывание метода init и destroy и выводим весь наш список на экран.
-        //видим при scope Singleton срабатывает метод init и destroy, только один раз при создании одинаковых бинов.
+        //Scope Singleton вызывает метод init и destroy, только один раз, при условие создание этих объектов в одном классе.
        
 
 
