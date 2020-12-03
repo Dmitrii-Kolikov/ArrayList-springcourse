@@ -3,3 +3,4 @@
 3 Применение ArrayList.
 5 Использоввание init-method(инициализация бина).
 6 Использование destroy-method(уничтожения бина).
+7 Проверяем наш scope-Singleton (сколько раз создается init-method и destroy-method при получение нескольких бинов)
