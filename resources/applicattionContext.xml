@@ -20,9 +20,7 @@
     </bean>
 
     <bean id="musicBean3"
-          class="ru.kolikov.springcourse.RapMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy" >
+          class="ru.kolikov.springcourse.RapMusic" >
     </bean>
 
     <bean id="musicPlayer"
